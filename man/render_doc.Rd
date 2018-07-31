@@ -2,13 +2,25 @@
 % Please edit documentation in R/render_doc.R
 \name{render_doc}
 \alias{render_doc}
-\title{Title}
+\title{Render Document}
 \usage{
 render_doc(file, rmd_dir = "rmd", output_dir = "docs", ...)
 }
 \arguments{
-\item{output_dir}{}
+\item{file}{A character vector specifying the file name}
+
+\item{rmd_dir}{The directory where the file lives, specified as a character vector}
+
+\item{output_dir}{The output directory, where the knitted versions will be placed}
 }
 \description{
-Title
+Calls \code{rmarkdown::render()} to produce the output of a given rmd file
+}
+\examples{
+
+I have a file called \\code{"manuscript.rmd"} that lives in my \\code{"repo/rmd/"} directory.
+\dontrun{
+render_doc(file = "manuscript.rmd")
+}
+
 }

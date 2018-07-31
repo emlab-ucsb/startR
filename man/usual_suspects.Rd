@@ -2,13 +2,13 @@
 % Please edit documentation in R/usual_suspects.R
 \name{usual_suspects}
 \alias{usual_suspects}
-\title{Title}
+\title{Package loading}
 \usage{
 usual_suspects(pkgs = NULL)
 }
 \arguments{
-\item{pkgs}{}
+\item{pkgs}{A character vector containing the packages that should be loaded. The fedault ones include \code{janitor}, \code{here}, \code{sf}, and \code{tidyverse}}
 }
 \description{
-Title
+Loads the usual packages from my every-day workflow
 }

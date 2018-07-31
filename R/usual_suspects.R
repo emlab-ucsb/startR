@@ -1,11 +1,11 @@
-#' Title
+#' Package loading
 #'
-#' @param pkgs
+#' @description Loads the usual packages from my every-day workflow
 #'
-#' @return
+#' @param pkgs A character vector containing the packages that should be loaded. The fedault ones include \code{janitor}, \code{here}, \code{sf}, and \code{tidyverse}
+#'
 #' @export
 #'
-#' @examples
 usual_suspects <- function(pkgs = NULL){
   if(is.null(pkgs)){
     packages <- c("janitor", "here", "sf", "tidyverse")

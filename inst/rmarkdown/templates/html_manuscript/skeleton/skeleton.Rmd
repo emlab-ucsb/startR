@@ -1,0 +1,20 @@
+---
+title: ""
+author: "Villaseñor-Derbez, J.C."
+date: "Compiled on `r date()` by `r Sys.info()['user']`"
+output: bookdown::html_document2
+    toc: yes
+    toc_float: yes
+    toc_depth: 4
+bibliography: references.bib
+---
+
+```{r}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+
+library(startR)
+usual_suspects()
+```
+

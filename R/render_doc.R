@@ -1,13 +1,20 @@
-#' Title
+#' Render Document
 #'
-#' @param file
-#' @param rmd_dir
-#' @param output_dir
+#' @description Calls \code{rmarkdown::render()} to produce the output of a given rmd file
 #'
-#' @return
+#' @param file A character vector specifying the file name
+#' @param rmd_dir The directory where the file lives, specified as a character vector
+#' @param output_dir The output directory, where the knitted versions will be placed
+#'
 #' @export
 #'
 #' @examples
+#'
+#' I have a file called \code{"manuscript.rmd"} that lives in my \code{"repo/rmd/"} directory.
+#' \dontrun{
+#' render_doc(file = "manuscript.rmd")
+#' }
+#'
 render_doc <- function(file, rmd_dir = "rmd", output_dir = "docs", ...){
   file <- file.path(rmd_dir, file)
   output <- file.path("..",output_dir)

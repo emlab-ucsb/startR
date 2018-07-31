@@ -13,5 +13,12 @@ create_readme(repo = "Repository",
 \item{footer}{(character) Text to be included in the footer. Defaults to my orcid}
 }
 \description{
-Creates a README.md file containing the structure of the repository
+Creates a README.md file containing the structure of the repository and a footer
+}
+\examples{
+
+\dontrun{
+create_readme() # Creates a readme file
+}
+
 }

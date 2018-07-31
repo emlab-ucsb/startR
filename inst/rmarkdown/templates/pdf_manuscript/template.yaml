@@ -1,0 +1,4 @@
+name: PDF manuscript
+description: >
+  Template for manuscripts of working papers. Inlucdes refrence management via natbib and
+  removes some of the default floating environments

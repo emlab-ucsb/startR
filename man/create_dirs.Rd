@@ -9,9 +9,16 @@ create_dirs(other_dirs = NULL)
 \arguments{
 \item{other_dirs}{If needed, a character vector containing the names for extra directories.}
 }
-\value{
-Creates directories in the current working directory
-}
 \description{
 Creates a set of standard directories: raw_data, data, rmd, docs, scripts
+}
+\examples{
+
+\dontrun{
+create_dirs() # This creates default directories
+
+create_dirs(other_dirs = "figures") # Creates all default directories and a figures directory
+}
+
+
 }

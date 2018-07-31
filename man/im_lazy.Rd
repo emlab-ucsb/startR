@@ -4,7 +4,7 @@
 \alias{im_lazy}
 \title{Lazy repository settup}
 \usage{
-im_lazy()
+im_lazy(first_doc = FALSE, ...)
 }
 \description{
 This is a wrapper arround \code{create_dirs} and \code{create_readme} that performs both opperations

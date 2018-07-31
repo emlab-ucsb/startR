@@ -4,8 +4,10 @@
 #'
 #' @export
 #'
-#' @examples
-im_lazy <- function(){
+im_lazy <- function(first_doc = FALSE, ...){
   create_dirs()
   create_readme()
+  if(first_doc){
+    create_manuscript(...)
+  }
 }
