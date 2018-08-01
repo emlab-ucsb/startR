@@ -1,0 +1,11 @@
+---
+title: "Conference name"
+subtitle: "Conference location"
+author: "Villaseñor-Derbez, J.C."
+date: "Compiled on `r date()`"
+output: bookdown::html_document2
+    toc: yes
+    toc_float: yes
+    toc_depth: 4
+---
+
