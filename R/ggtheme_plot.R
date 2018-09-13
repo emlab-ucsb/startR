@@ -1,3 +1,11 @@
+#' Plot theme
+#'
+#' @description Creates a standard theme for all my plots
+#'
+#' @param base_size
+#'
+#' @export
+#'
 ggtheme_plot <- function(base_size = 9) {
   theme(axis.ticks = element_blank(),
         text       = element_text(#family = "Helvetica",

@@ -1,3 +1,12 @@
+#' Map theme
+#'
+#' @description Creates a standard theme for all my maps
+#'
+#' @param base_size
+#'
+#' @export
+#'
+#' @examples
 ggtheme_map <- function(base_size = 9) {
   theme(text             = element_text(#family = "Helvetica",
     color = "gray30", size = base_size),
