@@ -19,4 +19,6 @@ render_doc <- function(file, rmd_dir = "rmd", output_dir = "docs", ...){
   file <- file.path(rmd_dir, file)
   output <- file.path("..",output_dir)
   rmarkdown::render(file, output_dir = output_dir, encoding = "UTF-8", ...)
+
+  browseURL(here::here(output_dir, file), browser = "C:/Program Files/RStudio/bin/sumatra/SumatraPDF.exe")
 }
