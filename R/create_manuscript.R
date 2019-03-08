@@ -7,9 +7,12 @@
 create_manuscript <- function(type = "html"){
 
   if(type == "html"){
-    rmarkdown::draft(file = "rmd/manuscript", template = "html_manuscript", package = "startR")
+    rmarkdown::draft(file = "docs/manuscript", template = "html_manuscript", package = "startR")
   }
   if(type == "pdf"){
-    rmarkdown::draft(file = "rmd/manuscript", template = "pdf_manuscript", package = "startR")
+    rmarkdown::draft(file = "docs/manuscript", template = "pdf_manuscript", package = "startR")
+  }
+  if(type == "eds"){
+    rmarkdown::draft(file = "docs/manuscript", template = "eds_manuscript", package = "startR")
   }
 }
