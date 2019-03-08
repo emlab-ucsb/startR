@@ -10,7 +10,7 @@ create_dirs(other_dirs = NULL)
 \item{other_dirs}{If needed, a character vector containing the names for extra directories.}
 }
 \description{
-Creates a set of standard directories: raw_data, data, rmd, docs, scripts
+Creates a set of standard directories: raw_data, data, docs, scripts
 }
 \examples{
 

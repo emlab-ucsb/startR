@@ -3,6 +3,7 @@
 export(create_dirs)
 export(create_manuscript)
 export(create_readme)
+export(get_table)
 export(ggtheme_map)
 export(ggtheme_plot)
 export(im_lazy)

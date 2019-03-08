@@ -2,10 +2,24 @@
 % Please edit documentation in R/setup.R
 \name{setup}
 \alias{setup}
-\title{Setup}
+\title{Set up repository}
 \usage{
-setup()
+setup(p1 = "Jamie", p2 = "Tracey", p3 = "JC", ...)
+}
+\arguments{
+\item{p1}{Name of person 1}
+
+\item{p2}{Name of person 2}
+
+\item{p3}{Name of persion 3}
+
+\item{...}{Any additional parameters are ignored}
 }
 \description{
-Sets everything up by \code{calling usual_suspects} and setting some knitr options
+Creates all the files and stuff needed for the repository to work
+}
+\examples{
+
+setup("Jamie", "Tracey", "JC")
+
 }

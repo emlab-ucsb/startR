@@ -4,10 +4,10 @@
 \alias{ggtheme_plot}
 \title{Plot theme}
 \usage{
-ggtheme_plot(base_size = 9)
+ggtheme_plot(font_size = 10, font_family = "", line_size = 0.5)
 }
 \arguments{
-\item{base_size}{}
+\item{font_size}{The size of the font for \code{element_text()}. Defaults to \code{font_size = 10}.}
 }
 \description{
 Creates a standard theme for all my plots

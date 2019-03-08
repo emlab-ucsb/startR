@@ -1,14 +1,16 @@
 ---
-title: "Awesome manuscript"
+title: "Awesome manuscript about Iris"
 author: "`r Sys.info()['user']`"
 date: "Compiled on `r date()` by `r Sys.info()['user']`"
-output: html_document2:
+output: 
+  bookdown::html_document2: 
+    fig_caption: yes
     toc: yes
     toc_float: yes
     toc_depth: 4
 ---
 
-```{r setup_chunk}
+```{r setup_chunk, echo = F}
 # Set some options
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
@@ -17,17 +19,21 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.height = 3)
 
 # Load some packages
-library(startR)
-library(tidyverse)
+suppressPackageStartupMessages({
+  library(startR)
+  library(here)
+  library(tidyverse)
+  })
 ```
 
 # Introduction
 
 In this awesome manuscript, we show that there is a correlation between sepal length and sepal width for three species of *Iris spp.*. The three species are:
 
-```{r}
-
+```{r load_data}
+iris <- read.csv(file = here("raw_data", "iris.csv"))
 ```
+
 
 # Methods
 
@@ -39,9 +45,9 @@ $$
 
 # Results
 
-Figure \@ref(plot) shows that larger petals are lighter.
+Figure \@ref(fig:plot) shows that larger petals are lighter.
 
-```{r plot, fig.cap = "Relationship between sepal width (gr) and sepal length (cm) for three *Iris spp*.}
+```{r plot, fig.cap = "Relationship between sepal width (gr) and sepal length (cm) for three *Iris spp*."}
 ggplot(data = iris,
        mapping = aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point(mapping = aes(color = Species)) +

@@ -10,7 +10,7 @@
 #'
 #' @examples
 #'
-#' I have a file called \code{"manuscript.rmd"} that lives in my \code{"repo/rmd/"} directory.
+#' #I have a file called \code{"manuscript.rmd"} that lives in my \code{"repo/rmd/"} directory.
 #' \dontrun{
 #' render_doc(file = "manuscript.rmd")
 #' }
