@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE,
 suppressPackageStartupMessages({
   library(startR)
   library(here)
-  library(tidyverse)
+  library(ggplot2)
   })
 ```
 
