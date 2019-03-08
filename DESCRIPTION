@@ -17,4 +17,5 @@ Imports:
     dplyr,
     tidyr,
     ggplot2,
-    knitr
+    knitr,
+    bookdown
