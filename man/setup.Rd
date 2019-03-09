@@ -4,16 +4,16 @@
 \alias{setup}
 \title{Set up repository}
 \usage{
-setup(p1 = "Jamie", p2 = "Tracey", p3 = "JC", ...)
+setup(p2 = "Tracey", p3 = "JC", ...)
 }
 \arguments{
-\item{p1}{Name of person 1}
-
 \item{p2}{Name of person 2}
 
 \item{p3}{Name of persion 3}
 
 \item{...}{Any additional parameters are ignored}
+
+\item{p1}{Name of person 1}
 }
 \description{
 Creates all the files and stuff needed for the repository to work

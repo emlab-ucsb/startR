@@ -13,7 +13,7 @@
 #'
 #' setup("Jamie", "Tracey", "JC")
 #'
-setup <- function(p1 = "Jamie", p2 = "Tracey", p3 = "JC", ...){
+setup <- function(p2 = "Tracey", p3 = "JC", ...){
   # Create directories
   print("Creating directories")
   create_dirs()
@@ -32,7 +32,7 @@ setup <- function(p1 = "Jamie", p2 = "Tracey", p3 = "JC", ...){
   # Create readme
   print("Creating README.md file")
   create_readme(repo = "GitHub for collaboration.",
-                footer = paste("by: ", p1, p2, p3))
+                footer = paste("by: ", p1, p2))
   print("Created README.md file")
 
   # Final message
