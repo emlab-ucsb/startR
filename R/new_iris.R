@@ -15,7 +15,7 @@ new_iris <- function(...) {
   data("iris_mythica")
 
   # Create data
-  write.csv(x = iris4,
+  write.csv(x = iris_mythica,
             file = "raw_data/iris_mythica.csv",
             row.names = F)
 }
