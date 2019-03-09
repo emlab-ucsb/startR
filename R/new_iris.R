@@ -12,14 +12,7 @@
 #'
 new_iris <- function(...) {
   # Load new data
-  iris4 <- read.csv("data/iris_mythica.csv") %>%
-    dplyr::select(Sepal.Length = sepal.length,
-                  Sepal.Width = sepal.width,
-                  Petal.Length = petal.length,
-                  Petal.Width = petal.width,
-                  Species = class) %>%
-    dplyr::filter(Species == "Iris-mythica") %>%
-    mutate(Species = "mythica")
+  data("iris_mythica")
 
   # Create data
   write.csv(x = iris4,
