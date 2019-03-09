@@ -2,6 +2,10 @@
 #'
 #' @description Creates a set of 50 lines with data from Ryan Anderson: https://dreamtolearn.com/ryan/data_analytics_viz/18, who made up some 50 new values for a fictional species: Iris mythica
 #'
+#' @importFrom magrittr %>%
+#' @name %>%
+#' @rdname pipe
+#'
 #' @param ... Ignores all parameters
 #'
 #' @export
