@@ -13,7 +13,7 @@
 #'
 #' setup("Jamie", "Tracey", "JC")
 #'
-setup <- function(p2 = "Tracey", p3 = "JC", ...){
+setup <- function(p1 = "Tracey", p2 = "JC", ...){
   # Create directories
   print("Creating directories")
   create_dirs()
