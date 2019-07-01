@@ -13,8 +13,11 @@
 #'
 #' @examples
 #'
+#'\dontrun{
 #' my_data <- get_table(dataset = "foreign_fishing_ren",
 #'                      table = "annual_foreign_fishing")
+#' }
+#'
 get_table <- function(project = "ucsb-gfw", dataset = NULL, table = NULL, allowLargeResults = TRUE, show_tables = TRUE) {
 
   if(is.null(dataset)){stop("Please provide the name of the dataset")}

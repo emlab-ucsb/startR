@@ -26,6 +26,9 @@ This function downloads tables from GoogleBigQuery and brings them into memory a
 }
 \examples{
 
+\dontrun{
 my_data <- get_table(dataset = "foreign_fishing_ren",
                      table = "annual_foreign_fishing")
+}
+
 }

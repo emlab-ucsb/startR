@@ -4,12 +4,13 @@ Title: startR
 Version: 0.1.0
 Author: person("Juan Carlos", "Villaseñor-Derbez", email = "juancarlos@ucsb.edu",
                   role = c("aut", "cre"))
+Maintainer: Juan Carlos Villaseñor-Derbez <juancarlos@ucsb.edu>
 Description: Create all necessary files and directories for a reproducible project workflow.
 Depends: R (>= 3.1.0)
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Imports: 
     here,
     rmarkdown,
@@ -18,4 +19,9 @@ Imports:
     tidyr,
     ggplot2,
     knitr,
-    bookdown
+    bookdown,
+    bigrquery,
+    UnidecodeR,
+    stringr
+Suggests: 
+    testthat

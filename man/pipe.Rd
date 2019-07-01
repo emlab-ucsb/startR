@@ -3,7 +3,6 @@
 \name{\%>\%}
 \alias{\%>\%}
 \alias{new_iris}
-\alias{\%>\%}
 \title{New iris}
 \usage{
 new_iris(...)
