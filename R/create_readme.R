@@ -1,4 +1,4 @@
-#' Creat README
+#' Create README
 #'
 #' @description Creates a README.md file containing the structure of the repository and a footer
 #'

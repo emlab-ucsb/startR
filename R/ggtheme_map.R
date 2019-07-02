@@ -6,7 +6,6 @@
 #'
 #' @export
 #'
-#' @examples
 ggtheme_map <- function(base_size = 9) {
   theme(
     text = element_text(#family = "Helvetica",

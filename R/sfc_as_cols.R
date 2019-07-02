@@ -11,7 +11,6 @@
 #' @return a data.frame
 #' @export
 #'
-#' @examples
 sfc_as_cols <- function(x, names = c("lon","lat")) {
   ret <- sf::st_coordinates(x)
   ret <- tibble::as_tibble(ret)

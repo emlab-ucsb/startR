@@ -1,7 +1,7 @@
-context("Testing shipname normalizing")
 library(startR)
 
-test_that("normalize_shipname works properly", {
+context("Testing shipname string normalizing")
+test_that("normalize_shipname", {
   expect_true(is.na(normalize_shipname(NA)))
   expect_true(is.na(normalize_shipname("")))
   expect_equal(normalize_shipname("MixEd"), "MIXED")
@@ -14,4 +14,15 @@ test_that("normalize_shipname works properly", {
   expect_equal(normalize_shipname("boat IX"), "BOAT9")
   expect_equal(normalize_shipname("a"), "A")
   expect_equal(normalize_shipname("no"), "NO")
+})
+
+context("Testing callsign string normalizing")
+test_that("normalize_callsign",{
+  expect_true(is.na(normalize_callsign(NA)))
+  expect_true(is.na(normalize_callsign("")))
+  expect_equal(normalize_callsign("MixEd"), "MIXED")
+  expect_equal(normalize_callsign("weird -+%()<>$;!&'`\\.#/"), "WEIRD")
+  expect_equal(normalize_callsign("  \tspaced  \nname      "), "SPACEDNAME")
+  expect_equal(normalize_callsign("a"), "A")
+  expect_equal(normalize_callsign("0020300a"), "20300A")
 })
