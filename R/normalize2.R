@@ -32,9 +32,8 @@
 #'
 #' @importFrom UnidecodeR unidecode
 #' @importFrom stringr str_squish str_trim str_remove str_remove_all str_replace str_detect str_split str_extract
-#' @importFrom magrittr %>%
 #'
-#' @aliases normalize_shipname normalize_callsign
+#' @aliases normalize_shipname2 normalize_callsign2
 #' @examples
 #' # Normalize a shipname that contains special
 #' # characters and roman numerals.
@@ -45,12 +44,12 @@
 #' # and weird characters
 #' callsign <- "0020300a-+%()<>$;!&'`\\.#/"
 #' normalize_callsign(callsign)
-#' @name normalize
+#' @name normalize2
 NULL
 
 #' @export
-#' @rdname normalize
-normalize_shipname <- function(name, ...) {
+#' @rdname normalize2
+normalize_shipname2 <- function(name, ...) {
   if (is.na(name) | (name != name) | (name == "")){
     return(NA)
   }
@@ -176,29 +175,6 @@ normalize_shipname <- function(name, ...) {
   if (name == ""){return(NA)}
 
   return(name)
+
 }
 
-#' @export
-#' @rdname normalize
-normalize_callsign <- function(callsign, ...) {
-  if (is.na(callsign) | (callsign != callsign) | (callsign == "")){
-    return(NA)
-  }
-
-  ## turn to upper cases
-  callsign <- toupper(callsign)
-
-  ## remove nasty charcters, white space
-  callsign <- unidecode(callsign, language = "all")
-  callsign <- enc2utf8(callsign)
-  callsign <- str_squish(callsign)
-  callsign <- str_trim(callsign)
-  callsign <- str_remove(callsign, "\n")
-  callsign <- str_remove(callsign, "\r")
-  callsign <- str_remove_all(callsign, "[^[:alnum:]]") # Remove non-alphanumeric characters
-  callsign <- str_remove(callsign, "^0+") # Remove zeroes at the start
-
-  if(callsign == ""){return(NA)}
-
-  return(callsign)
-}
