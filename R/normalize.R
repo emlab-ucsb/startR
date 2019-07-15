@@ -113,6 +113,7 @@ normalize_shipname <- function(name, ...) {
   ## All additional information in parentheses and brackets
   name <- str_remove(name, "\\(.+\\)")
   name <- str_remove(name, "\\[.+\\]")
+  name <- str_trim(name)
 
   ## Extract numbers from letters
   name <- str_replace(name, " ONE($)| UNO($)| UN($)", " 1")

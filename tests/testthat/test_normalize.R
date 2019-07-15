@@ -12,6 +12,7 @@ test_that("normalize_shipname", {
   expect_equal(normalize_shipname("no. boat"), "BOAT")
   expect_equal(normalize_shipname("no537 boat"), "BOAT537")
   expect_equal(normalize_shipname("boat IX"), "BOAT9")
+  expect_equal(normalize_shipname("boat IX (something)"), "BOAT9")
   expect_equal(normalize_shipname("a"), "A")
   expect_equal(normalize_shipname("no"), "NO")
 })
