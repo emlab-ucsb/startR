@@ -31,7 +31,7 @@ get_table <- function(project = "ucsb-gfw", dataset = NULL, table = NULL, allowL
   if(show_tables) {DBI::dbListTables(BQc)}
 
   table <- dplyr::tbl(BQc, table) %>%
-    collect()
+    dplyr::collect()
 
   return(table)
 }
