@@ -15,6 +15,7 @@ test_that("normalize_shipname", {
   expect_equal(normalize_shipname("boat IX (something)"), "BOAT9")
   expect_equal(normalize_shipname("a"), "A")
   expect_equal(normalize_shipname("no"), "NO")
+  expect_equal(normalize_shipname("海达705"), "HAIDA705")
 })
 
 context("Testing callsign string normalizing")
