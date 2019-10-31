@@ -55,11 +55,13 @@ normalize_shipname <- function(name, ...) {
     return(NA)
   }
 
+  # Translate weird characters
+  name <- unidecode(name, language = "all")
+
   ## turn to upper cases
   name <- toupper(name)
 
   ## remove nasty charcters, white space
-  name <- unidecode(name, language = "all")
   name <- enc2utf8(name)
   name <- str_squish(name)
   name <- str_trim(name)
@@ -148,11 +150,13 @@ normalize_shipname <- function(name, ...) {
   ## if last word from the name text has L/C/D/M then do not deromanize
   if (!str_detect(vs[[1]][length(vs[[1]])], "[LCDM]")){
     if(str_detect(vs[[1]][length(vs[[1]])], "[IVX]")){
-      vs[[1]][length(vs[[1]])] <- as.roman(vs[[1]][length(vs[[1]])])
-      if(!is.na(vs[[1]][length(vs[[1]])])){
-        vs[[1]][length(vs[[1]])] <- as.numeric(vs[[1]][length(vs[[1]])])
-        ## attach the deromanized digits to the end
-        name <- paste(vs[[1]], collapse = " ")
+      if(length(vs[[1]]) > 1){
+        vs[[1]][length(vs[[1]])] <- as.roman(vs[[1]][length(vs[[1]])])
+        if(!is.na(vs[[1]][length(vs[[1]])])){
+          vs[[1]][length(vs[[1]])] <- as.numeric(vs[[1]][length(vs[[1]])])
+          ## attach the deromanized digits to the end
+          name <- paste(vs[[1]], collapse = " ")
+        }
       }
     }
   }
