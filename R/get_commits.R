@@ -54,7 +54,7 @@ get_commits <- function(path = "~/Documents/GitHub/", target_user, from = "2019-
   message("Found ", nrow(commits), " commits by me")
 
   if(export){
-    write.csv(commits, paste(target_user.csv))
+    write.csv(commits, paste0(target_user,".csv"))
   } else {
     return(commits)
     }
