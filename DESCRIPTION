@@ -22,7 +22,9 @@ Imports:
     bookdown,
     bigrquery,
     UnidecodeR,
-    stringr
+    stringr,
+    git2r,
+    lubridate
 Suggests: 
     testthat
 Remotes:
