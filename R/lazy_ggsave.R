@@ -14,14 +14,14 @@
 lazy_ggsave <- function(plot, filename, width = 7, height = 5){
   # Save as png
   ggsave(plot = plot,
-         filename = here("results", "img", paste0(filename, ".png")),
+         filename = here::here("results", "img", paste0(filename, ".png")),
          width = width,
          height = height,
          units = "cm")
 
   # Save as pdf
   ggsave(plot = plot,
-         filename = here("results", "img", paste0(filename, ".pdf")),
+         filename = here::here("results", "img", paste0(filename, ".pdf")),
          width = width,
          height = height,
          units = "cm")
