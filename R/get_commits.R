@@ -14,7 +14,7 @@
 #'
 #' get_commits(path = "", target_user = "jcvdav", from = "2019-01-01", export = F)
 #'
-get_commits <- function(path = "~/Documents/GitHub/", target_user, from = "2019-01-01", export = F) {
+get_commits <- function(path = "~/Documents/GitHub/", target_user, from = "2019-01-01", export = F, filter = F) {
 
   dirs <- fs::dir_ls(path, type = "directory")
 
@@ -49,9 +49,11 @@ get_commits <- function(path = "~/Documents/GitHub/", target_user, from = "2019-
   commits <- dplyr::filter(commits, date >= from)
   message("Found ", nrow(commits), " from ", from)
 
-  message("Filtering names...")
-  commits <- dplyr::filter(commits, user == target_user)
-  message("Found ", nrow(commits), " commits by me")
+  if(filter){
+    message("Filtering names...")
+    commits <- dplyr::filter(commits, user %in% target_user)
+    message("Found ", nrow(commits), " commits by me")
+  }
 
   if(export){
     write.csv(commits, paste0(target_user,".csv"))
