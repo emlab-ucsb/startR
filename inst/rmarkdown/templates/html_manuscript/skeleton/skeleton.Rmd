@@ -2,7 +2,6 @@
 title: ""
 author: "Villaseñor-Derbez, J.C."
 date: "Compiled on `r date()` by `r Sys.info()['user']`"
-date: "Compiled on `r date()` by `r Sys.info()['user']`"
 output: 
   bookdown::html_document2: 
     fig_caption: yes
