@@ -17,7 +17,7 @@
 #'
 create_dirs <- function(other_dirs = NULL){
   if(is.null(other_dirs)){
-    folder_names <- c("raw_data", "data", "docs", "scripts")
+    folder_names <- c("scripts", "results")
   } else {
     folder_names <- c("raw_data", "data", "docs", "scripts", other_dirs)
   }

@@ -4,8 +4,13 @@
 \alias{my_regtable}
 \title{Customized \code{stargazer} regression table}
 \usage{
-my_regtable(model_list, type = "latex", single.row = T,
-  omit.stat = c("adj.rsq", "ser"), ...)
+my_regtable(
+  model_list,
+  type = "latex",
+  single.row = T,
+  omit.stat = c("adj.rsq", "ser"),
+  ...
+)
 }
 \arguments{
 \item{model_list}{A list of models}

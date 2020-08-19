@@ -18,7 +18,7 @@ create_readme <- function(repo = "Repository", footer = '<a href="https://orcid.
   # Twee was created, of course, by awesome Jenny Brian:
   # https://gist.github.com/jennybc/2bf1dbe6eb1f261dfe60
 
-  twee <- function(path = getwd(), level = Inf) {
+  twee <- function(path, level = Inf) {
 
     fad <- list.files(path = path, recursive = TRUE, no.. = TRUE, include.dirs = TRUE)
 
@@ -46,7 +46,7 @@ create_readme <- function(repo = "Repository", footer = '<a href="https://orcid.
   writeLines(text = c(paste0("# ", repo,"\n\n"),
                       "## Repository structure \n",
                       "```",
-                      twee(level = 2),
+                      twee(path = getwd(), level = 3),
                       "```",
                       "\n--------- \n",
                       footer), con = "README.md")

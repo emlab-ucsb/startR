@@ -4,8 +4,13 @@
 \alias{get_commits}
 \title{Get git commits}
 \usage{
-get_commits(path = "~/Documents/GitHub/", target_user,
-  from = "2019-01-01", export = F, filter = F)
+get_commits(
+  path = "~/Documents/GitHub/",
+  target_user,
+  from = "2019-01-01",
+  export = F,
+  filter = F
+)
 }
 \arguments{
 \item{path}{Path to the folder where you keep your repos (usually Documents/GitHub/)}

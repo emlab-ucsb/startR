@@ -4,8 +4,13 @@
 \alias{get_table}
 \title{Get tables from GoogleBigQuery}
 \usage{
-get_table(project = "ucsb-gfw", dataset = NULL, table = NULL,
-  allowLargeResults = TRUE, show_tables = TRUE)
+get_table(
+  project = "ucsb-gfw",
+  dataset = NULL,
+  table = NULL,
+  allowLargeResults = TRUE,
+  show_tables = TRUE
+)
 }
 \arguments{
 \item{project}{Name of the project, defaults to \code{ucsb-gfw}}
