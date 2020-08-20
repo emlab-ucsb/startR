@@ -3,7 +3,6 @@
 #' @description Creates a README.md file containing the structure of the repository and a footer
 #'
 #' @param repo (character) The repository name, or any other title, defaults to 'Repository'
-#' @param footer (character) Text to be included in the footer. Defaults to my orcid
 #'
 #' @export
 #'
@@ -13,8 +12,7 @@
 #' create_readme() # Creates a readme file
 #' }
 #'
-create_readme <- function(repo = "Repository", footer = '<a href="https://orcid.org/0000-0003-1245-589X" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0003-1245-589X</a>'){
-
+create_readme <- function(repo = "Repository"){
   # Twee was created, of course, by awesome Jenny Brian:
   # https://gist.github.com/jennybc/2bf1dbe6eb1f261dfe60
 
@@ -48,7 +46,7 @@ create_readme <- function(repo = "Repository", footer = '<a href="https://orcid.
                       "```",
                       twee(path = getwd(), level = 3),
                       "```",
-                      "\n--------- \n",
-                      footer), con = "README.md")
+                      "\n---------"),
+             con = "README.md")
 }
 

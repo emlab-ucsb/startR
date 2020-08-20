@@ -2,7 +2,9 @@
 #'
 #' @description Creates a standard theme for all my maps
 #'
-#' @param base_size
+#' @param base_size Base size for the fonts
+#'
+#' @importFrom ggplot2 theme element_text rel element_blank element_rect element_line
 #'
 #' @export
 #'

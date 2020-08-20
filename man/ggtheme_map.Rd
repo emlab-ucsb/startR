@@ -7,7 +7,7 @@
 ggtheme_map(base_size = 9)
 }
 \arguments{
-\item{base_size}{}
+\item{base_size}{Base size for the fonts}
 }
 \description{
 Creates a standard theme for all my maps

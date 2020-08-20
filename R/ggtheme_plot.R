@@ -3,14 +3,17 @@
 #' @description Creates a standard theme for all my plots
 #'
 #' @param font_size The size of the font for \code{element_text()}. Defaults to \code{font_size = 10}.
+#' @param font_family The font family
+#' @param line_size The size of the lines
 #'
+#' @importFrom ggplot2 %+replace% theme_gray theme element_rect element_text margin rel element_line element_blank unit
 #' @export
 #'
 ggtheme_plot <- function (font_size = 10, font_family = "", line_size = 0.5) {
 
   half_line <- font_size / 2
 
-  theme_grey(base_size = font_size, base_family = font_family) %+replace%
+  theme_gray(base_size = font_size, base_family = font_family) %+replace%
     theme(rect = element_rect(fill = "transparent",
                               colour = NA,
                               color = NA,

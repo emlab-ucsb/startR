@@ -7,7 +7,7 @@
 st_rotate(x)
 }
 \arguments{
-\item{an}{sf object}
+\item{x}{an sf object}
 }
 \value{
 the same object, with coordinates rotated

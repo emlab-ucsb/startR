@@ -6,23 +6,24 @@
 #' @param height Height of the figure (in cm)
 #'
 #' @return Does not return anything, just saves a file to disk
-
+#'
+#' @importFrom ggplot2 ggsave
+#'
 #' @export
 #'
-#' @examples
 
-lazy_ggsave <- function(plot, filename, width = 7, height = 5){
+lazy_ggsave <- function(plot, filename, width = 14, height = 10){
   # Save as png
-  ggsave(plot = plot,
-         filename = here::here("results", "img", paste0(filename, ".png")),
-         width = width,
-         height = height,
-         units = "cm")
+  ggplot2::ggsave(plot = plot,
+                  filename = here::here("results", "img", paste0(filename, ".png")),
+                  width = width,
+                  height = height,
+                  units = "cm")
 
   # Save as pdf
-  ggsave(plot = plot,
-         filename = here::here("results", "img", paste0(filename, ".pdf")),
-         width = width,
-         height = height,
-         units = "cm")
+  ggplot2::ggsave(plot = plot,
+                  filename = here::here("results", "img", paste0(filename, ".pdf")),
+                  width = width,
+                  height = height,
+                  units = "cm")
 }

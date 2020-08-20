@@ -30,14 +30,16 @@
 #'
 #' @return A normmalized shipname or callsign
 #'
-#' @importFrom UnidecodeR unidecode
+#' @importFrom UnidecodeR unidecode get_transliterations
 #' @importFrom stringr str_squish str_trim str_remove str_remove_all str_replace str_detect str_split str_extract
 #' @importFrom magrittr %>%
+#' @importFrom utils as.roman browseURL
 #'
 #' @aliases normalize_shipname normalize_callsign
 #' @examples
 #' # Normalize a shipname that contains special
 #' # characters and roman numerals.
+#' library(startR)
 #' shipname <- "weird -+%()<>$;!&'`\\.#/boat name IV"
 #' normalize_shipname(shipname)
 #'

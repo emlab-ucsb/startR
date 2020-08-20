@@ -4,7 +4,7 @@
 \alias{lazy_ggsave}
 \title{Save a ggplot object as a figure, with some defaults (PNG and PDF only)}
 \usage{
-lazy_ggsave(plot, filename, width = 7, height = 5)
+lazy_ggsave(plot, filename, width = 14, height = 10)
 }
 \arguments{
 \item{plot}{A ggplot object}

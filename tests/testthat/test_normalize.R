@@ -1,4 +1,5 @@
 library(startR)
+library(UnidecodeR)
 
 context("Testing shipname string normalizing")
 test_that("normalize_shipname", {

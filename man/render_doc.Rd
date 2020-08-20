@@ -12,6 +12,8 @@ render_doc(file, rmd_dir = "rmd", output_dir = "docs", ...)
 \item{rmd_dir}{The directory where the file lives, specified as a character vector}
 
 \item{output_dir}{The output directory, where the knitted versions will be placed}
+
+\item{...}{Other arguments passed to \code{rmarkdown::render}}
 }
 \description{
 Calls \code{rmarkdown::render()} to produce the output of a given rmd file

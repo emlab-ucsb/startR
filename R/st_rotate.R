@@ -4,7 +4,7 @@
 #' and converts it to an object 0 to 360 (like the ones used in climate
 #' model outpt)
 #'
-#' @param an sf object
+#' @param x an sf object
 #'
 #' @return the same object, with coordinates rotated
 #'

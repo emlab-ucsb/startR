@@ -9,7 +9,7 @@ sfc_as_cols(x, names = c("lon", "lat"))
 \arguments{
 \item{x}{An object of class df sf}
 
-\item{names}{}
+\item{names}{The desired names for the x and y columns, a string of \code{c("lon", "lat")} is the default}
 }
 \value{
 a data.frame

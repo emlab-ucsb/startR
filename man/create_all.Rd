@@ -4,10 +4,24 @@
 \alias{create_all}
 \title{Create all}
 \usage{
-create_all(local_dirs = T, emlab_dirs = T, setup_script = T, readme = T)
+create_all(
+  project_codename,
+  local_dirs = T,
+  emlab_dirs = T,
+  setup_script = T,
+  readme = T
+)
 }
 \arguments{
-\item{readme}{}
+\item{project_codename}{The code name used for the project. It should match the name used in the "current project" directory at emLab}
+
+\item{local_dirs}{Create local directories?}
+
+\item{emlab_dirs}{Create emlab directories?}
+
+\item{setup_script}{Create setup scritp?}
+
+\item{readme}{Create readme?}
 }
 \description{
 This is a wrapper around \code{create_local_dirs}, \code{create_emlab_dirs}, \code{create_setup_script} and \code{create_readme}

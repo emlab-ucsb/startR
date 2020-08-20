@@ -9,9 +9,6 @@ create_setup_script(project_codename)
 \arguments{
 \item{project_codename}{The code name used for the project. It should match the name used in the "current project" directory at emLab}
 }
-\value{
-
-}
 \description{
 Create setup script
 }

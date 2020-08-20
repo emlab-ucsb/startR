@@ -8,6 +8,10 @@ ggtheme_plot(font_size = 10, font_family = "", line_size = 0.5)
 }
 \arguments{
 \item{font_size}{The size of the font for \code{element_text()}. Defaults to \code{font_size = 10}.}
+
+\item{font_family}{The font family}
+
+\item{line_size}{The size of the lines}
 }
 \description{
 Creates a standard theme for all my plots

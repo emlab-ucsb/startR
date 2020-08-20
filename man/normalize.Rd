@@ -48,6 +48,7 @@ This was inspired by Jaeyoon Park's Python Module: \url{https://github.com/jaeyo
 \examples{
 # Normalize a shipname that contains special
 # characters and roman numerals.
+library(startR)
 shipname <- "weird -+\%()<>$;!&'`\\\\.#/boat name IV"
 normalize_shipname(shipname)
 

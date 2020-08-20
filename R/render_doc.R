@@ -5,6 +5,9 @@
 #' @param file A character vector specifying the file name
 #' @param rmd_dir The directory where the file lives, specified as a character vector
 #' @param output_dir The output directory, where the knitted versions will be placed
+#' @param ... Other arguments passed to \code{rmarkdown::render}
+#'
+#' @importFrom utils browseURL
 #'
 #' @export
 #'
