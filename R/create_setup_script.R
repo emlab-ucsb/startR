@@ -10,7 +10,7 @@ create_setup_script <- function(project_codename) {
     text = c(
       '##########################\n## Paths to directories ##\n##########################\n',
       '# Check for OS',
-      'sys_path <- get_filestream_path()\n',
+      'sys_path <- startR::get_filestream_path()\n',
       '# Path to emLab data folder',
       'data_path <- file.path(sys_path,"Shared drives/emlab/data")\n',
       '# Path to this project folder',
