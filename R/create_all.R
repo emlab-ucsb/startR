@@ -30,11 +30,6 @@ create_all <- function(project_codename, local_dirs = T, emlab_dirs = T, setup_s
     print("Create setup script in root directory")
     create_setup_script(project_codename)
     print("Done!")
-    print("Adding setup script to Rprofile...")
-    call <- paste0('echo ', '"source("scripts/00_setup.R")"', ">> .Rprofile")
-    system(command = call)
-    print("Done!")
-    print("If you move or rename your setup script, remember to modify your .Rprofile file with `usethis::edit_r_profile()`")
   }
 
   # Create readme

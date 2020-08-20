@@ -16,6 +16,10 @@ create_setup_script <- function(project_codename) {
       '# Path to this project folder',
       paste0('project_path <- file.path(sys_path,"Shared drives/emlab/projects/current-projects/', project_codename, '")')
     ),
-    con = "00_setup.R"
+    con = "scripts/00_setup.R"
   )
+
+  message("Adding setup script to Rprofile...\nIf you move or rename your setup script, remember to modify your .Rprofile file with `usethis::edit_r_profile()`")
+  line <- 'source("scripts/00_setup.R")'
+  write(x = line, file = ".Rprofile", append = TRUE)
 }
