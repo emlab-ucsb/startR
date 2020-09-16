@@ -6,7 +6,7 @@ Author: person("Juan Carlos", "Villaseñor-Derbez", email = "juancarlos@ucsb.edu
                   role = c("aut", "cre"))
 Maintainer: Juan Carlos Villaseñor-Derbez <juancarlos@ucsb.edu>
 Description: Create all necessary files and directories for a reproducible project workflow.
-Depends: R (>= 3.1.0)
+Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
