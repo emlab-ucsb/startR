@@ -23,7 +23,7 @@ This family of functions is here to `create` a bunch of things that we always ne
 
 There are two standard themes: `ggtheme_plot` and `ggtheme_map`. And a `lazzy_ggsave` function, which will export your plots as both pdf and tiff, directly into the `results/img` flder created by `create_local_dirs`.
 
-### `normalize` family
+### `normalize_*` family
 
 Adapting from GFW's python script used to normalize shipnames and callsign, this is a non-vectorized R implementation of the same process.
 
