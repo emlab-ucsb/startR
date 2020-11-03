@@ -4,11 +4,14 @@
 \alias{normalize}
 \alias{normalize_shipname}
 \alias{normalize_callsign}
+\alias{normalize_economic_unit}
 \title{Normalize shipname and callsign}
 \usage{
 normalize_shipname(name, ...)
 
 normalize_callsign(callsign, ...)
+
+normalize_economic_unit(economic_unit)
 }
 \arguments{
 \item{name}{A character string (or vector of strings) to be normalized}

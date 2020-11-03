@@ -29,3 +29,17 @@ test_that("normalize_callsign",{
   expect_equal(normalize_callsign("a"), "A")
   expect_equal(normalize_callsign("0020300a"), "20300A")
 })
+
+
+context("Testing economic unit string normalizing")
+test_that("normalize_economic_unit",{
+  expect_true(is.na(normalize_economic_unit("")))
+  expect_equal(normalize_economic_unit("MixEd"), "MIXED")
+  expect_equal(normalize_economic_unit("weird -+%()<>$;!&'`\\.#/"), "WEIRD")
+  expect_equal(normalize_economic_unit(" spaced name "), "SPACED NAME")
+  expect_equal(normalize_economic_unit("RUISEÑOR"), "RUISENOR")
+  expect_equal(normalize_economic_unit("SCPP Progreso"), "PROGRESO")
+  expect_equal(normalize_economic_unit("SCPP Progreso SA DE CV"), "PROGRESO")
+  expect_equal(normalize_economic_unit("SCPP Progreso SA DE CV DE RL"), "PROGRESO")
+  expect_equal(normalize_economic_unit("S.C.P.P. Progreso"), "PROGRESO")
+})
