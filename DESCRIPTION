@@ -28,7 +28,8 @@ Imports:
     DBI,
     sf,
     stargazer,
-    tibble
+    tibble,
+    readxl
 Suggests: 
     testthat
 Remotes:

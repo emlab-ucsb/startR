@@ -1,4 +1,4 @@
-#' write_metadata
+#' Create a metadata file for a dataset
 #'
 #' @description Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)
 #'
@@ -7,6 +7,7 @@
 #' @param sheet_names concatenated strings (e.g. c("Macroinverts", "FishLength")) for which sheets of an excel file you'd like to generate a metadata file for; all sheets specified will be kept in the same readme document; if using a csv file or only one sheet is present, set to NULL
 #'
 #' @importFrom readxl read_excel
+#' @importFrom utils read.csv head
 #'
 #' @export
 #'
@@ -25,19 +26,19 @@ write_metadata <- function(file, path, sheet_names = NULL){
 
   # Read in file if .csv
   if(file_type == "csv") {
-    data <- read.csv(paste0(path,file))
+    data <- utils::read.csv(paste0(path,file))
   }
 
   # Read in file or create file list if .xlsx
   sheet_list <- NULL
 
   if(file_type == "xlsx" & is.null(sheet_names)) {
-    data <- read_excel(paste0(path,file))
+    data <- readxl::read_excel(paste0(path,file))
   }
 
   if(file_type == "xlsx" & !is.null(sheet_names)) {
     for(sheet in sheet_names) {
-      temp <- read_excel(paste0(path,file), sheet = sheet)
+      temp <- readxl:: read_excel(paste0(path,file), sheet = sheet)
       sheet_list[[sheet]] = temp
     }
   }
@@ -98,7 +99,7 @@ write_metadata <- function(file, path, sheet_names = NULL){
       cols$description[i] <- readline(paste("What does column", colnames(data)[i], "mean? - "))
       cols$units[i] <- readline(paste("What are the units for or format of column", colnames(data)[i], "? - "))
       cols$class[i] <- class(data[[i]])[1]
-      cols$examples[i] <- list(paste(head(unique(data[,i]), n = 3)))
+      cols$examples[i] <- list(paste(utils::head(unique(data[,i]), n = 3)))
     }
     size <- data.frame("n_rows" = nrow(data),
                        "n_cols" = ncol(data))
@@ -120,7 +121,7 @@ write_metadata <- function(file, path, sheet_names = NULL){
         cols$description[i] <- readline(paste("For Sheet", sheet,"- what does column", colnames(data)[i], "mean? - "))
         cols$units[i] <- readline(paste("For Sheet", sheet,"- what are the units for or format of column", colnames(data)[i], "? - "))
         cols$class[i] <- class(data[[i]])[1]
-        cols$examples[i] <- list(paste(head(unique(data[,i]), n = 3)))
+        cols$examples[i] <- list(paste(utils::head(unique(data[,i]), n = 3)))
       }
       size <- data.frame("sheet" = sheet,
                          "n_rows" = nrow(data),
