@@ -11,7 +11,7 @@ normalize_shipname(name, ...)
 
 normalize_callsign(callsign, ...)
 
-normalize_economic_unit(economic_unit)
+normalize_economic_unit(economic_unit, ...)
 }
 \arguments{
 \item{name}{A character string (or vector of strings) to be normalized}
@@ -19,6 +19,8 @@ normalize_economic_unit(economic_unit)
 \item{...}{Any other arguments}
 
 \item{callsign}{A character string (or vector of strings) to be normalized}
+
+\item{economic_unit}{A character string (or vector of strings) to be normalized}
 }
 \value{
 A normmalized shipname or callsign
