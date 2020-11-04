@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: person("Juan Carlos", "Villaseñor-Derbez",
                 email = "juancarlos@ucsb.edu",
                 role = c("aut", "cre"))
-        person("Echele", "Burns",
+        person("Echelle", "Burns",
                 email = "echelle_burns@ucsb.edu",
                 role = "aut")
 Maintainer: Juan Carlos Villaseñor-Derbez <juancarlos@ucsb.edu>
