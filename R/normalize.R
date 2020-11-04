@@ -26,6 +26,7 @@
 #'
 #' @param name A character string (or vector of strings) to be normalized
 #' @param callsign A character string (or vector of strings) to be normalized
+#' @param economic_unit A character string (or vector of strings) to be normalized
 #' @param ... Any other arguments
 #'
 #' @return A normmalized shipname or callsign
@@ -40,12 +41,12 @@
 #' # Normalize a shipname that contains special
 #' # characters and roman numerals.
 #' library(startR)
-#' shipname <- "weird -+%()<>$;!&'`\\.#/boat name IV"
+#' shipname <- "weird-+%()<>$;!&'`#/boat name IV"
 #' normalize_shipname(shipname)
 #'
 #' # Normalize a callsign starting with zeros
 #' # and weird characters
-#' callsign <- "0020300a-+%()<>$;!&'`\\.#/"
+#' callsign <- "0020300a-+%()<>$;!&'`#/"
 #' normalize_callsign(callsign)
 #' @name normalize
 NULL
@@ -210,10 +211,9 @@ normalize_callsign <- function(callsign, ...) {
   return(callsign)
 }
 
-#' @example
+#' @export
 #' @rdname normalize
-
-normalize_economic_unit <- function(economic_unit) {
+normalize_economic_unit <- function(economic_unit, ...) {
   economic_unit <- economic_unit %>%
     stringr::str_to_upper() %>%
     stringr::str_replace_all(pattern = "Ñ", replacement = "N") %>%
