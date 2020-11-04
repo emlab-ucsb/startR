@@ -4,7 +4,7 @@
 
 ```
 # install.packages("devtools") #Run if required
-devtools::install_github("jcvdav/startR")
+devtools::install_github("emlab-ucsb/startR")
 ```
 
 ## Usage
@@ -17,7 +17,9 @@ This family of functions is here to `create` a bunch of things that we always ne
 - `create_local_dirs` Creates local direcotires withing your RStudio project and associated git repo. It creates folders for scripts, results (tables and figures).
 - `create_readme` Once all files and folers are in place, it inspects the repository strucutre to generate a map (se bottom of README)
 - `create_setup_script` Creates a standardized setup script, which will be automatically run every time you open the RStudio project (or restart R session). It contains default filepaths, which will be created as environmental variables in your environment.
-`create_all` wrapper around all of the above.
+- `create_all` wrapper around all of the above.
+- `create_metadata` Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)
+
 
 ### `ggplot`-related things
 
@@ -31,6 +33,7 @@ Adapting from GFW's python script used to normalize shipnames and callsign, this
 normalize_shipname("海达705")
 "HAIDA705"
 ```
+
 
 ## Repository structure 
 
@@ -60,12 +63,14 @@ normalize_shipname("海达705")
    |__sfc_as_cols.Rd
    |__st_rotate.Rd
    |__transliterations_all.Rd
+   |__write_metadata.Rd
 -- NAMESPACE
 -- R
    |__create_all.R
    |__create_emlab_dirs.R
    |__create_local_dirs.R
    |__create_manuscript.R
+   |__create_metadata.R
    |__create_readme.R
    |__create_setup_script.R
    |__get_filestream_path.R
@@ -86,6 +91,7 @@ normalize_shipname("海达705")
    |__library
       |__R-4.0
    |__settings.dcf
+   |__staging
 -- startR.Rproj
 -- tests
    |__testthat
