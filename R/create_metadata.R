@@ -11,7 +11,7 @@
 #'
 #' @export
 #'
-write_metadata <- function(file, path, sheet_names = NULL){
+create_metadata <- function(file, path, sheet_names = NULL){
 
   # Set file directory and read in file
   if(!grepl("/$", path)) {
