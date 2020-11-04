@@ -54,11 +54,11 @@ This was inspired by Jaeyoon Park's Python Module: \url{https://github.com/jaeyo
 # Normalize a shipname that contains special
 # characters and roman numerals.
 library(startR)
-shipname <- "weird -+\%()<>$;!&'`\\\\.#/boat name IV"
+shipname <- "weird-+\%()<>$;!&'`#/boat name IV"
 normalize_shipname(shipname)
 
 # Normalize a callsign starting with zeros
 # and weird characters
-callsign <- "0020300a-+\%()<>$;!&'`\\\\.#/"
+callsign <- "0020300a-+\%()<>$;!&'`#/"
 normalize_callsign(callsign)
 }
