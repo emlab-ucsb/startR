@@ -50,6 +50,7 @@ normalize_shipname("海达705")
    |__create_emlab_dirs.Rd
    |__create_local_dirs.Rd
    |__create_manuscript.Rd
+   |__crete_metadata.Rd
    |__create_readme.Rd
    |__create_setup_script.Rd
    |__get_filestream_path.Rd
@@ -63,7 +64,6 @@ normalize_shipname("海达705")
    |__sfc_as_cols.Rd
    |__st_rotate.Rd
    |__transliterations_all.Rd
-   |__write_metadata.Rd
 -- NAMESPACE
 -- R
    |__create_all.R
