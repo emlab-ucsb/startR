@@ -5,7 +5,7 @@
 \alias{normalize_shipname}
 \alias{normalize_callsign}
 \alias{normalize_economic_unit}
-\title{Normalize shipname and callsign}
+\title{Normalize shipname, callsign, and economic unit}
 \usage{
 normalize_shipname(name, ...)
 

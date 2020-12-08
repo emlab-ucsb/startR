@@ -3,8 +3,8 @@
 ## Installation
 
 ```
-# install.packages("devtools") #Run if required
-devtools::install_github("emlab-ucsb/startR")
+# install.packages("remotes")                   # Run if required
+remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo
 ```
 
 ## Usage
@@ -33,70 +33,3 @@ Adapting from GFW's python script used to normalize shipnames and callsign, this
 normalize_shipname("海达705")
 "HAIDA705"
 ```
-
-
-## Repository structure 
-
-```
--- data
-   |__transliterations_all.RData
--- DESCRIPTION
--- inst
-   |__rmarkdown
-      |__templates
--- LICENSE
--- man
-   |__create_all.Rd
-   |__create_emlab_dirs.Rd
-   |__create_local_dirs.Rd
-   |__create_manuscript.Rd
-   |__crete_metadata.Rd
-   |__create_readme.Rd
-   |__create_setup_script.Rd
-   |__get_filestream_path.Rd
-   |__get_table.Rd
-   |__ggtheme_map.Rd
-   |__ggtheme_plot.Rd
-   |__lazy_ggsave.Rd
-   |__normalize.Rd
-   |__pipe.Rd
-   |__render_doc.Rd
-   |__sfc_as_cols.Rd
-   |__st_rotate.Rd
-   |__transliterations_all.Rd
--- NAMESPACE
--- R
-   |__create_all.R
-   |__create_emlab_dirs.R
-   |__create_local_dirs.R
-   |__create_manuscript.R
-   |__create_metadata.R
-   |__create_readme.R
-   |__create_setup_script.R
-   |__get_filestream_path.R
-   |__get_table.R
-   |__ggtheme_map.R
-   |__ggtheme_plot.R
-   |__lazy_ggsave.R
-   |__normalize.R
-   |__render_doc.R
-   |__sfc_as_cols.R
-   |__st_rotate.R
-   |__transliterations_all.R
-   |__utils-pipe.R
--- README.md
--- renv
--- renv.lock
-   |__activate.R
-   |__library
-      |__R-4.0
-   |__settings.dcf
-   |__staging
--- startR.Rproj
--- tests
-   |__testthat
-   |__testthat.R
-      |__test_normalize.R
-```
-
----------

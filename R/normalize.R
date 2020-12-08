@@ -1,4 +1,4 @@
-#' Normalize shipname and callsign
+#' Normalize shipname, callsign, and economic unit
 #'
 #' @description Performs a series of string normalizations to get a clean shipname or callsign.
 #' This was inspired by Jaeyoon Park's Python Module: \url{https://github.com/jaeyoonpark/shipdataprocess}.

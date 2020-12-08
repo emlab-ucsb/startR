@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>startR • startR</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -65,8 +65,8 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<pre><code><a href="https://devtools.r-lib.org//reference/remote-reexports.html"># install.packages("devtools") #Run if required
-devtools::install_github("emlab-ucsb/startR")</a></code></pre>
+<pre><code><a href="https://remotes.r-lib.org/reference/install_github.html"># install.packages("remotes")                   # Run if required
+remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo</a></code></pre>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -103,70 +103,6 @@ devtools::install_github("emlab-ucsb/startR")</a></code></pre>
 "HAIDA705"</a></code></pre>
 </div>
 </div>
-<div id="repository-structure" class="section level2">
-<h2 class="hasAnchor">
-<a href="#repository-structure" class="anchor"></a>Repository structure</h2>
-<pre><code>-- data
-   |__transliterations_all.RData
--- DESCRIPTION
--- inst
-   |__rmarkdown
-      |__templates
--- LICENSE
--- man
-   |__create_all.Rd
-   |__create_emlab_dirs.Rd
-   |__create_local_dirs.Rd
-   |__create_manuscript.Rd
-   |__create_readme.Rd
-   |__create_setup_script.Rd
-   |__get_filestream_path.Rd
-   |__get_table.Rd
-   |__ggtheme_map.Rd
-   |__ggtheme_plot.Rd
-   |__lazy_ggsave.Rd
-   |__normalize.Rd
-   |__pipe.Rd
-   |__render_doc.Rd
-   |__sfc_as_cols.Rd
-   |__st_rotate.Rd
-   |__transliterations_all.Rd
-   |__write_metadata.Rd
--- NAMESPACE
--- R
-   |__create_all.R
-   |__create_emlab_dirs.R
-   |__create_local_dirs.R
-   |__create_manuscript.R
-   |__create_metadata.R
-   |__create_readme.R
-   |__create_setup_script.R
-   |__get_filestream_path.R
-   |__get_table.R
-   |__ggtheme_map.R
-   |__ggtheme_plot.R
-   |__lazy_ggsave.R
-   |__normalize.R
-   |__render_doc.R
-   |__sfc_as_cols.R
-   |__st_rotate.R
-   |__transliterations_all.R
-   |__utils-pipe.R
--- README.md
--- renv
--- renv.lock
-   |__activate.R
-   |__library
-      |__R-4.0
-   |__settings.dcf
-   |__staging
--- startR.Rproj
--- tests
-   |__testthat
-   |__testthat.R
-      |__test_normalize.R</code></pre>
-<hr>
-</div>
 </div>
   </div>
 
@@ -189,7 +125,8 @@ devtools::install_github("emlab-ucsb/startR")</a></code></pre>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Juan Carlos Villaseñor-Derbez <br><small class="roles"> Maintainer </small>  </li>
+<li>Juan Carlos Villaseñor-Derbez <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1245-589X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Echelle Burns <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
 
@@ -198,7 +135,7 @@ devtools::install_github("emlab-ucsb/startR")</a></code></pre>
 
 
       <footer><div class="copyright">
-  <p>Developed by Juan Carlos Villaseñor-Derbez.</p>
+  <p>Developed by Juan Carlos Villaseñor-Derbez, Echelle Burns.</p>
 </div>
 
 <div class="pkgdown">

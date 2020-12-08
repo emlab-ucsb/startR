@@ -2,12 +2,15 @@ Package: startR
 Type: Package
 Title: startR
 Version: 0.1.0
-Author: person("Juan Carlos", "Villaseñor-Derbez",
+Authors@R: c(
+        person("Juan Carlos", "Villaseñor-Derbez",
                 email = "juancarlos@ucsb.edu",
-                role = c("aut", "cre"))
+                role = c("aut", "cre"),
+                comment = c(ORCID = "0000-0003-1245-589X")),
         person("Echelle", "Burns",
                 email = "echelle_burns@ucsb.edu",
                 role = "aut")
+                )
 Maintainer: Juan Carlos Villaseñor-Derbez <juancarlos@ucsb.edu>
 Description: Create all necessary files and directories for a reproducible project workflow.
 Depends: R (>= 3.5.0)

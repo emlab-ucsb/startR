@@ -4,7 +4,7 @@
 \alias{create_metadata}
 \title{Create a metadata file for a dataset}
 \usage{
-create_metadata(file, path, sheet_names = NULL)
+create_metadata(file = NULL, path = ".", sheet_names = NULL)
 }
 \arguments{
 \item{file}{string for the filename you'd like to read in (e.g. "this_datasheet.csv")}
