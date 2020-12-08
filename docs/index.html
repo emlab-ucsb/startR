@@ -66,21 +66,22 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="startr-package-for-workflow-management-and-standardization" class="section level1">
+<div id="startr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#startr-package-for-workflow-management-and-standardization" class="anchor"></a><code>startR</code> package for workflow management and standardization</h1></div>
+<a href="#startr" class="anchor"></a><code>startR</code>
+</h1></div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <pre><code><a href="https://remotes.r-lib.org/reference/install_github.html"># install.packages("remotes")                   # Run if required
 remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo</a></code></pre>
 </div>
-<div id="usage" class="section level2">
+<div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
-<div id="create_-family" class="section level3">
+<a href="#overview" class="anchor"></a>Overview</h2>
+<div id="the-create_-family" class="section level3">
 <h3 class="hasAnchor">
-<a href="#create_-family" class="anchor"></a><code>create_*</code> family</h3>
+<a href="#the-create_-family" class="anchor"></a>The <code>create_*</code> family</h3>
 <p>This family of functions is here to <code>create</code> a bunch of things that we always need, like standard directories (folders), repository structure, and data paths. The family contains the following:</p>
 <ul>
 <li>
@@ -97,17 +98,15 @@ remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo</a></
 <code>create_metadata</code> Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)</li>
 </ul>
 </div>
-<div id="ggplot-related-things" class="section level3">
+<div id="the-ggplot-related-things" class="section level3">
 <h3 class="hasAnchor">
-<a href="#ggplot-related-things" class="anchor"></a><code>ggplot</code>-related things</h3>
+<a href="#the-ggplot-related-things" class="anchor"></a>The <code>ggplot</code>-related things</h3>
 <p>There are two standard themes: <code>ggtheme_plot</code> and <code>ggtheme_map</code>. And a <code>lazzy_ggsave</code> function, which will export your plots as both pdf and tiff, directly into the <code>results/img</code> flder created by <code>create_local_dirs</code>.</p>
 </div>
-<div id="normalize_-family" class="section level3">
+<div id="the-normalize_-family" class="section level3">
 <h3 class="hasAnchor">
-<a href="#normalize_-family" class="anchor"></a><code>normalize_*</code> family</h3>
+<a href="#the-normalize_-family" class="anchor"></a>The <code>normalize_*</code> family</h3>
 <p>Adapting from GFW’s python script used to normalize shipnames and callsign, this is a non-vectorized R implementation of the same process.</p>
-<pre><code><a href="reference/normalize.html">normalize_shipname("海达705")
-"HAIDA705"</a></code></pre>
 </div>
 </div>
 </div>

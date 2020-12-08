@@ -1,4 +1,4 @@
-# `startR` package for workflow management and standardization
+# `startR`
 
 ## Installation
 
@@ -7,9 +7,9 @@
 remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo
 ```
 
-## Usage
+## Overview
 
-### `create_*` family
+### The `create_*` family
 
 This family of functions is here to `create` a bunch of things that we always need, like standard directories (folders), repository structure, and data paths. The family contains the following:
 
@@ -21,15 +21,16 @@ This family of functions is here to `create` a bunch of things that we always ne
 - `create_metadata` Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)
 
 
-### `ggplot`-related things
+### The `ggplot`-related things
 
 There are two standard themes: `ggtheme_plot` and `ggtheme_map`. And a `lazzy_ggsave` function, which will export your plots as both pdf and tiff, directly into the `results/img` flder created by `create_local_dirs`.
 
-### `normalize_*` family
+### The `normalize_*` family
 
 Adapting from GFW's python script used to normalize shipnames and callsign, this is a non-vectorized R implementation of the same process.
 
-```
-normalize_shipname("海达705")
-"HAIDA705"
-```
+------------
+
+## Code of Conduct
+  
+  Please note that the startR project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
