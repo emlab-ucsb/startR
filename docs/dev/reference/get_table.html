@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Normalize shipname, callsign, and economic unit — normalize • startR</title>
+<title>Get tables from GoogleBigQuery — get_table • startR</title>
 
 
 <!-- jquery -->
@@ -39,31 +39,11 @@
 
 
 
-<meta property="og:title" content="Normalize shipname, callsign, and economic unit — normalize" />
-<meta property="og:description" content="Performs a series of string normalizations to get a clean shipname or callsign.
-This was inspired by Jaeyoon Park's Python Module: https://github.com/jaeyoonpark/shipdataprocess.
-normalize_shipname will do the following:
-Make all letters into capital letters
-Remove leading and trailing whitespaces
-Remove linebreaks
-Remove all references to vessel codes (i.e. MFV stands for Marine Fishing Vessel)
-Convert numbers expressed as letters to numbers (i.e. ONE becomes 1)
-Convert roman numerals to arabic numbers
-Remove NO. when it references a number (i.e. BOAT NO.5 becomes BOAT5)
-Remove all special characters
+<meta property="og:title" content="Get tables from GoogleBigQuery — get_table" />
+<meta property="og:description" content="This function downloads tables from GoogleBigQuery and brings them into memory as a normal r data.frame. The first time it is ran, you will have to authenticate into your GBQ account." />
 
 
-normalize_callsign will:
-Make all letters into capital letters
-Remove leading and trailing whitespaces
-Remove linebreaks
-Remove leading zeroes (i.e. 007JAMESBOND becomes 7JAMESBOND)
-Remove all special characters
-
-" />
-
-
-
+<meta name="robots" content="noindex">
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -92,7 +72,7 @@ Remove all special characters
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">startR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0</span>
       </span>
     </div>
 
@@ -128,78 +108,60 @@ Remove all special characters
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Normalize shipname, callsign, and economic unit</h1>
-    <small class="dont-index">Source: <a href='https://github.com/emlab-ucsb/startR/blob/master/R/normalize.R'><code>R/normalize.R</code></a></small>
-    <div class="hidden name"><code>normalize.Rd</code></div>
+    <h1>Get tables from GoogleBigQuery</h1>
+    <small class="dont-index">Source: <a href='https://github.com/emlab-ucsb/startR/blob/master/R/get_table.R'><code>R/get_table.R</code></a></small>
+    <div class="hidden name"><code>get_table.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Performs a series of string normalizations to get a clean shipname or callsign.
-This was inspired by Jaeyoon Park's Python Module: <a href='https://github.com/jaeyoonpark/shipdataprocess'>https://github.com/jaeyoonpark/shipdataprocess</a>.</p>
-<p><code>normalize_shipname</code> will do the following:</p><ul>
-<li><p>Make all letters into capital letters</p></li>
-<li><p>Remove leading and trailing whitespaces</p></li>
-<li><p>Remove linebreaks</p></li>
-<li><p>Remove all references to vessel codes (<em>i.e.</em> <code>MFV</code> stands for Marine Fishing Vessel)</p></li>
-<li><p>Convert numbers expressed as letters to numbers (<em>i.e.</em> <code>ONE</code> becomes <code>1</code>)</p></li>
-<li><p>Convert roman numerals to arabic numbers</p></li>
-<li><p>Remove <code>NO.</code> when it references a number (<em>i.e.</em> <code>BOAT NO.5</code> becomes <code>BOAT5</code>)</p></li>
-<li><p>Remove all special characters</p></li>
-</ul>
-
-<p><code>normalize_callsign</code> will:</p><ul>
-<li><p>Make all letters into capital letters</p></li>
-<li><p>Remove leading and trailing whitespaces</p></li>
-<li><p>Remove linebreaks</p></li>
-<li><p>Remove leading zeroes (<em>i.e.</em> <code>007JAMESBOND</code> becomes <code>7JAMESBOND</code>)</p></li>
-<li><p>Remove all special characters</p></li>
-</ul>
-
+    <p>This function downloads tables from GoogleBigQuery and brings them into memory as a normal r data.frame. The first time it is ran, you will have to authenticate into your GBQ account.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>normalize_shipname</span><span class='op'>(</span><span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='fu'>normalize_callsign</span><span class='op'>(</span><span class='va'>callsign</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='fu'>normalize_economic_unit</span><span class='op'>(</span><span class='va'>economic_unit</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_table</span><span class='op'>(</span>
+  project <span class='op'>=</span> <span class='st'>"ucsb-gfw"</span>,
+  dataset <span class='op'>=</span> <span class='cn'>NULL</span>,
+  table <span class='op'>=</span> <span class='cn'>NULL</span>,
+  allowLargeResults <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  show_tables <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>name</th>
-      <td><p>A character string (or vector of strings) to be normalized</p></td>
+      <th>project</th>
+      <td><p>Name of the project, defaults to <code>ucsb-gfw</code></p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Any other arguments</p></td>
+      <th>dataset</th>
+      <td><p>Name of the dataset where the table lives</p></td>
     </tr>
     <tr>
-      <th>callsign</th>
-      <td><p>A character string (or vector of strings) to be normalized</p></td>
+      <th>table</th>
+      <td><p>Name of the table to download</p></td>
     </tr>
     <tr>
-      <th>economic_unit</th>
-      <td><p>A character string (or vector of strings) to be normalized</p></td>
+      <th>allowLargeResults</th>
+      <td><p>Allow large results?</p></td>
+    </tr>
+    <tr>
+      <th>show_tables</th>
+      <td><p>Show all tables within the dataset before downloading?</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A normmalized shipname or callsign</p>
+    <p>An object of clas <code>tbl.df</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Normalize a shipname that contains special</span>
-<span class='co'># characters and roman numerals.</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/emlab-ucsb/startR'>startR</a></span><span class='op'>)</span>
-<span class='va'>shipname</span> <span class='op'>&lt;-</span> <span class='st'>"weird-+%()&lt;&gt;$;!&amp;'`#/boat name IV"</span>
-<span class='fu'>normalize_shipname</span><span class='op'>(</span><span class='va'>shipname</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "WEIRDBOATNAME4"</div><div class='input'>
-<span class='co'># Normalize a callsign starting with zeros</span>
-<span class='co'># and weird characters</span>
-<span class='va'>callsign</span> <span class='op'>&lt;-</span> <span class='st'>"0020300a-+%()&lt;&gt;$;!&amp;'`#/"</span>
-<span class='fu'>normalize_callsign</span><span class='op'>(</span><span class='va'>callsign</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "20300A"</div></pre>
+    <pre class="examples"><div class='input'>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>my_data</span> <span class='op'>&lt;-</span> <span class='fu'>get_table</span><span class='op'>(</span>dataset <span class='op'>=</span> <span class='st'>"foreign_fishing_ren"</span>,
+                     table <span class='op'>=</span> <span class='st'>"annual_foreign_fishing"</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

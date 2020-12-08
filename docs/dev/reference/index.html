@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create README — create_readme • startR</title>
+<title>Function reference • startR</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,10 @@
 
 
 
-<meta property="og:title" content="Create README — create_readme" />
-<meta property="og:description" content="Creates a README.md file containing the structure of the repository and a footer" />
+<meta property="og:title" content="Function reference" />
 
 
-
+<meta name="robots" content="noindex">
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -59,7 +58,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -72,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">startR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0</span>
       </span>
     </div>
 
@@ -106,37 +105,138 @@
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-    <h1>Create README</h1>
-    <small class="dont-index">Source: <a href='https://github.com/emlab-ucsb/startR/blob/master/R/create_readme.R'><code>R/create_readme.R</code></a></small>
-    <div class="hidden name"><code>create_readme.Rd</code></div>
+      <h1>Reference</h1>
     </div>
 
-    <div class="ref-description">
-    <p>Creates a README.md file containing the structure of the repository and a footer</p>
-    </div>
+    <table class="ref-index">
 
-    <pre class="usage"><span class='fu'>create_readme</span><span class='op'>(</span>repo <span class='op'>=</span> <span class='st'>"Repository"</span><span class='op'>)</span></pre>
+    <colgroup>
+      
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>repo</th>
-      <td><p>(character) The repository name, or any other title, defaults to 'Repository'</p></td>
-    </tr>
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="create_all.html">create_all()</a></code> </p>
+        </td>
+        <td><p>Create all</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_emlab_dirs.html">create_emlab_dirs()</a></code> </p>
+        </td>
+        <td><p>Create emLab directories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_local_dirs.html">create_local_dirs()</a></code> </p>
+        </td>
+        <td><p>Create local directories</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_manuscript.html">create_manuscript()</a></code> </p>
+        </td>
+        <td><p>Create manuscript</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_metadata.html">create_metadata()</a></code> </p>
+        </td>
+        <td><p>Create a metadata file for a dataset</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_readme.html">create_readme()</a></code> </p>
+        </td>
+        <td><p>Create README</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_setup_script.html">create_setup_script()</a></code> </p>
+        </td>
+        <td><p>Create setup script</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_filestream_path.html">get_filestream_path()</a></code> </p>
+        </td>
+        <td><p>Get Filestream path</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_table.html">get_table()</a></code> </p>
+        </td>
+        <td><p>Get tables from GoogleBigQuery</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ggtheme_map.html">ggtheme_map()</a></code> </p>
+        </td>
+        <td><p>Map theme</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ggtheme_plot.html">ggtheme_plot()</a></code> </p>
+        </td>
+        <td><p>Plot theme</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="lazy_ggsave.html">lazy_ggsave()</a></code> </p>
+        </td>
+        <td><p>Save a ggplot object as a figure, with some defaults (PNG and PDF only)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="normalize.html">normalize_shipname()</a></code> <code><a href="normalize.html">normalize_callsign()</a></code> <code><a href="normalize.html">normalize_economic_unit()</a></code> </p>
+        </td>
+        <td><p>Normalize shipname, callsign, and economic unit</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="render_doc.html">render_doc()</a></code> </p>
+        </td>
+        <td><p>Render Document</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sfc_as_cols.html">sfc_as_cols()</a></code> </p>
+        </td>
+        <td><p>sfc_as_cols</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="st_rotate.html">st_rotate()</a></code> </p>
+        </td>
+        <td><p>Rotate an sf object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="transliterations_all.html">transliterations_all</a></code> </p>
+        </td>
+        <td><p>transliterations_all</p></td>
+      </tr>
+    </tbody>
     </table>
-
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>create_readme</span><span class='op'>(</span><span class='op'>)</span> <span class='co'># Creates a readme file</span>
-<span class='op'>}</span>
-
-</div></pre>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

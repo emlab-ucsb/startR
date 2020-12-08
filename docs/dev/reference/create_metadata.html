@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create README — create_readme • startR</title>
+<title>Create a metadata file for a dataset — create_metadata • startR</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,11 @@
 
 
 
-<meta property="og:title" content="Create README — create_readme" />
-<meta property="og:description" content="Creates a README.md file containing the structure of the repository and a footer" />
+<meta property="og:title" content="Create a metadata file for a dataset — create_metadata" />
+<meta property="og:description" content="Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)" />
 
 
-
+<meta name="robots" content="noindex">
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">startR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0</span>
       </span>
     </div>
 
@@ -108,34 +108,35 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create README</h1>
-    <small class="dont-index">Source: <a href='https://github.com/emlab-ucsb/startR/blob/master/R/create_readme.R'><code>R/create_readme.R</code></a></small>
-    <div class="hidden name"><code>create_readme.Rd</code></div>
+    <h1>Create a metadata file for a dataset</h1>
+    <small class="dont-index">Source: <a href='https://github.com/emlab-ucsb/startR/blob/master/R/create_metadata.R'><code>R/create_metadata.R</code></a></small>
+    <div class="hidden name"><code>create_metadata.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates a README.md file containing the structure of the repository and a footer</p>
+    <p>Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>create_readme</span><span class='op'>(</span>repo <span class='op'>=</span> <span class='st'>"Repository"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>create_metadata</span><span class='op'>(</span>file <span class='op'>=</span> <span class='cn'>NULL</span>, path <span class='op'>=</span> <span class='st'>"."</span>, sheet_names <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>repo</th>
-      <td><p>(character) The repository name, or any other title, defaults to 'Repository'</p></td>
+      <th>file</th>
+      <td><p>string for the filename you'd like to read in (e.g. "this_datasheet.csv")</p></td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><p>directory for where that files lives (and where the readme will be saved) (e.g. "Downloads/")</p></td>
+    </tr>
+    <tr>
+      <th>sheet_names</th>
+      <td><p>concatenated strings (e.g. c("Macroinverts", "FishLength")) for which sheets of an excel file you'd like to generate a metadata file for; all sheets specified will be kept in the same readme document; if using a csv file or only one sheet is present, set to NULL</p></td>
     </tr>
     </table>
 
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>create_readme</span><span class='op'>(</span><span class='op'>)</span> <span class='co'># Creates a readme file</span>
-<span class='op'>}</span>
-
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
