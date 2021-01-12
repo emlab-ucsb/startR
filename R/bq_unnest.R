@@ -20,7 +20,7 @@
 #' # `vi_ssvid_v20201209`
 #' # CROSS JOIN
 #' # UNNEST(ais_identity.n_imo) AS un
-
+#'
 #' # Define a connection
 #' con <- connection_open(
 #'   bigquery(),
