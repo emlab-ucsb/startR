@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' #A classic example from the vessel info tables in GFW
+#' # A classic example from the vessel info tables in GFW
 #' # The following corresponds to:
 #' # <SQL>
 #' # SELECT ssvid, un.value, un.count
