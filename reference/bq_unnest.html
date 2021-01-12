@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map theme — ggtheme_map • startR</title>
+<title>bq_unnest — bq_unnest • startR</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Map theme — ggtheme_map" />
-<meta property="og:description" content="Creates a standard theme for all my maps" />
+<meta property="og:title" content="bq_unnest — bq_unnest" />
+<meta property="og:description" content="Unnest an array column and cross joins it to the table" />
 
 
 
@@ -108,27 +108,78 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Map theme</h1>
-    <small class="dont-index">Source: <a href='https://github.com/emlab-ucsb/startR/blob/master/R/ggtheme_map.R'><code>R/ggtheme_map.R</code></a></small>
-    <div class="hidden name"><code>ggtheme_map.Rd</code></div>
+    <h1>bq_unnest</h1>
+    <small class="dont-index">Source: <a href='https://github.com/emlab-ucsb/startR/blob/master/R/bq_unnest.R'><code>R/bq_unnest.R</code></a></small>
+    <div class="hidden name"><code>bq_unnest.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates a standard theme for all my maps</p>
+    <p>Unnest an array column and cross joins it to the table</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ggtheme_map</span><span class='op'>(</span>base_size <span class='op'>=</span> <span class='fl'>9</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>bq_unnest</span><span class='op'>(</span><span class='va'>input_tbl</span>, <span class='va'>select_columns</span>, <span class='va'>array_column</span>, <span class='va'>unnested_columns</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>base_size</th>
-      <td><p>Base size for the fonts</p></td>
+      <th>input_tbl</th>
+      <td><p>A tbl object</p></td>
+    </tr>
+    <tr>
+      <th>select_columns</th>
+      <td><p>Normal columns to select</p></td>
+    </tr>
+    <tr>
+      <th>array_column</th>
+      <td><p>Array column to unnest</p></td>
+    </tr>
+    <tr>
+      <th>unnested_columns</th>
+      <td><p>Columns contained in the array that must be selected</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>A tbl</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'>#A classic example from the vessel info tables in GFW</span>
+<span class='co'># The following corresponds to:</span>
+<span class='co'># &lt;SQL&gt;</span>
+<span class='co'># SELECT ssvid, un.value, un.count</span>
+<span class='co'># FROM</span>
+<span class='co'># `vi_ssvid_v20201209`</span>
+<span class='co'># CROSS JOIN</span>
+<span class='co'># UNNEST(ais_identity.n_imo) AS un</span>
+<span class='co'># Define a connection</span>
+<span class='va'>con</span> <span class='op'>&lt;-</span> <span class='fu'>connection_open</span><span class='op'>(</span>
+  <span class='fu'>bigquery</span><span class='op'>(</span><span class='op'>)</span>,
+  project <span class='op'>=</span> <span class='st'>"world-fishing-827"</span>,
+  dataset <span class='op'>=</span> <span class='st'>"gfw_research"</span>,
+  billing <span class='op'>=</span> <span class='st'>"emlab-gcp"</span>,
+  use_legacy_sql <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  allowLargeResults <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+
+<span class='co'># Define a tbl</span>
+<span class='va'>vessel_info</span> <span class='op'>&lt;-</span> <span class='fu'>tbl</span><span class='op'>(</span><span class='va'>con</span>, <span class='st'>"vi_ssvid_v20201209"</span><span class='op'>)</span>
+
+<span class='co'># Unnest the tbl</span>
+<span class='va'>vessel_info_unnested</span> <span class='op'>&lt;-</span>
+  <span class='fu'>bq_unnest</span><span class='op'>(</span>input_tbl <span class='op'>=</span> <span class='va'>vessel_info</span>,                  <span class='co'># Define tbl</span>
+            select_columns <span class='op'>=</span> <span class='st'>"ssvid"</span>,                 <span class='co'># Columns to select</span>
+            array_column <span class='op'>=</span> <span class='st'>"ais_identity.n_imo"</span>,      <span class='co'># Array column</span>
+            unnested_columns <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"value"</span>, <span class='st'>"count"</span><span class='op'>)</span><span class='op'>)</span>   <span class='co'># Columns to select once unnested</span>
+
+<span class='co'># Inspect the SQL code</span>
+<span class='fu'>dbplyr</span><span class='fu'>::</span><span class='fu'>show_query</span><span class='op'>(</span><span class='va'>vessel_info_unnested</span><span class='op'>)</span>
+
+<span class='co'># Get the top 10 elements</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>vessel_info_unnested</span>, <span class='fl'>10</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
