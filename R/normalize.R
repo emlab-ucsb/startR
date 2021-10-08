@@ -31,7 +31,7 @@
 #'
 #' @return A normmalized shipname or callsign
 #'
-#' @importFrom UnidecodeR unidecode get_transliterations
+#' @importFrom unidecoder unidecode get_transliterations
 #' @importFrom stringr str_squish str_trim str_remove str_remove_all str_replace str_detect str_split str_extract
 #' @importFrom magrittr %>%
 #' @importFrom utils as.roman browseURL
