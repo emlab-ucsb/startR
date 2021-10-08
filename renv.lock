@@ -623,10 +623,10 @@
     },
     "sf": {
       "Package": "sf",
-      "Version": "0.9-6",
+      "Version": "0.9-7",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "bf0ef23231efe31576e08d69772892ef"
+      "Hash": "9d6831c4c002137d99be6b946ac9da07"
     },
     "stargazer": {
       "Package": "stargazer",
@@ -658,10 +658,10 @@
     },
     "systemfonts": {
       "Package": "systemfonts",
-      "Version": "0.2.3",
+      "Version": "0.3.2",
       "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "86e3c704ca4e498330d0d8730b437a4d"
+      "Repository": "CRAN",
+      "Hash": "046e821d454edb3722192f588f4d7884"
     },
     "testthat": {
       "Package": "testthat",
