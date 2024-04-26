@@ -18,7 +18,8 @@ This family of functions is here to `create` a bunch of things that we always ne
 - `create_readme` Once all files and folers are in place, it inspects the repository strucutre to generate a map (se bottom of README)
 - `create_setup_script` Creates a standardized setup script, which will be automatically run every time you open the RStudio project (or restart R session). It contains default filepaths, which will be created as environmental variables in your environment.
 - `create_all` wrapper around all of the above.
-- `create_metadata` Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)
+- `create_metadataC` Generates a *complete* metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx/.xls)
+- `create_metadataB` Generates a *bare bones* metadata file that matches the emLab SOP by taking the basic information (number of rows, columns, column names, column types, examples of data in columns) from a data.frame in your environment; use directly before/after `write.csv()`
 
 
 ### The `ggplot`-related things
