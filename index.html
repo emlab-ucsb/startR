@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>startR • startR</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/emlab-ucsb/startR/">
+  <a href="https://github.com/emlab-ucsb/startR/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -66,22 +62,22 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="startr" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#startr" class="anchor"></a><code>startR</code>
+<div class="section level1">
+<div class="page-header"><h1 id="startr">
+<code>startR</code><a class="anchor" aria-label="anchor" href="#startr"></a>
 </h1></div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<pre><code><a href="https://remotes.r-lib.org/reference/install_github.html"># install.packages("remotes")                   # Run if required
-remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo</a></code></pre>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<pre><code><span><span class="co"># install.packages("remotes")                   # Run if required</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"emlab-ucsb/startR"</span><span class="op">)</span>    <span class="co"># Install from GitHub repo</span></span></code></pre>
 </div>
-<div id="overview" class="section level2">
-<h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
-<div id="the-create_-family" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-create_-family" class="anchor"></a>The <code>create_*</code> family</h3>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<div class="section level3">
+<h3 id="the-create_-family">The <code>create_*</code> family<a class="anchor" aria-label="anchor" href="#the-create_-family"></a>
+</h3>
 <p>This family of functions is here to <code>create</code> a bunch of things that we always need, like standard directories (folders), repository structure, and data paths. The family contains the following:</p>
 <ul>
 <li>
@@ -95,72 +91,89 @@ remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo</a></
 <li>
 <code>create_all</code> wrapper around all of the above.</li>
 <li>
-<code>create_metadata</code> Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx)</li>
+<code>create_metadataC</code> Generates a <em>complete</em> metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx/.xls)</li>
+<li>
+<code>create_metadataB</code> Generates a <em>bare bones</em> metadata file that matches the emLab SOP by taking the basic information (number of rows, columns, column names, column types, examples of data in columns) from a data.frame in your environment; use directly before/after <code><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">write.csv()</a></code>
+</li>
 </ul>
 </div>
-<div id="the-ggplot-related-things" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-ggplot-related-things" class="anchor"></a>The <code>ggplot</code>-related things</h3>
+<div class="section level3">
+<h3 id="the-ggplot-related-things">The <code>ggplot</code>-related things<a class="anchor" aria-label="anchor" href="#the-ggplot-related-things"></a>
+</h3>
 <p>There are two standard themes: <code>ggtheme_plot</code> and <code>ggtheme_map</code>. And a <code>lazzy_ggsave</code> function, which will export your plots as both pdf and tiff, directly into the <code>results/img</code> flder created by <code>create_local_dirs</code>.</p>
 </div>
-<div id="the-normalize_-family" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-normalize_-family" class="anchor"></a>The <code>normalize_*</code> family</h3>
+<div class="section level3">
+<h3 id="the-normalize_-family">The <code>normalize_*</code> family<a class="anchor" aria-label="anchor" href="#the-normalize_-family"></a>
+</h3>
 <p>Adapting from GFW’s python script used to normalize shipnames and callsign, this is a non-vectorized R implementation of the same process.</p>
 <hr>
 </div>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the startR project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
+<p>Please note that the startR project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<!-- badges: start -->
+
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=startR">https://​cloud.r-project.org/​package=startR</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/emlab-ucsb/startR/">https://​github.com/​emlab-ucsb/​startR/​</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=startR" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/emlab-ucsb/startR/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Juan Carlos Villaseñor-Derbez <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1245-589X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html#citation">Citing startR</a></li>
+</ul>
+</div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Juan Carlos Villaseñor-Derbez <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1245-589X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Echelle Burns <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Juan Carlos Villaseñor-Derbez, Echelle Burns.</p>
+  <p></p>
+<p>Developed by Juan Carlos Villaseñor-Derbez, Echelle Burns.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
       </footer>
@@ -168,6 +181,8 @@ remotes::install_github("emlab-ucsb/startR")    # Install from GitHub repo</a></
 
   
 
+
+  
 
   </body>
 </html>
