@@ -5,6 +5,8 @@
 #' @param file string for the filename you'd like to read in (e.g. "this_datasheet.csv")
 #' @param path directory for where that files lives (and where the readme will be saved) (e.g. "Downloads/")
 #' @param sheet_names concatenated strings (e.g. c("Macroinverts", "FishLength")) for which sheets of an excel file you'd like to generate a metadata file for; all sheets specified will be kept in the same readme document; if using a csv file or only one sheet is present, set to NULL
+#' @param template_file string for the metadata file that you'd like to use as a template (keeps the project info from this file to write the new metadata file)
+#' @param template_path directory for where the template metadatafile lives
 #'
 #' @importFrom readxl read_excel
 #' @importFrom utils read.csv head
@@ -12,7 +14,7 @@
 #' @export
 #'
 #'
-create_metadataC <- function(file = NULL, path = ".", sheet_names = NULL){
+create_metadataC <- function(file = NULL, path = ".", sheet_names = NULL, template_file = NULL, template_path = NULL){
 
   # Set file directory and read in file
   if(!grepl("/$", path)) {
@@ -44,34 +46,71 @@ create_metadataC <- function(file = NULL, path = ".", sheet_names = NULL){
     }
   }
 
+  # Read in template file
+  if(!is.null(template_file)) {
+    if(is.null(template_path)) { template_path <- path }
+    modify <- read.delim(paste0(template_path,template_file), header = FALSE) %>%
+      dplyr::rename(vals = 1)
+  }
+
   # General Information
-  name <- readline("What is your name? - ")
-  email <- readline("What is your email? - ")
   date <- paste(Sys.Date())
   data_title <- readline("What is the title of this dataset? - ")
   author_name <- readline("Who is the author of this dataset? - ")
   author_email <- readline("What is the author's email? - ")
-  pi <- readline("Who is the PI of this project? - ")
-  copi <- readline("Who is the Associate or Co-investigator for this project? - ")
-  prim_contact <- readline("Who is the primary contact for this project? - ")
-  alt_contact <- readline("Who are the alternative contacts for this project? - ")
   data_date <- readline("What was the date of data collection (YYYYMMDD)? - ")
-  data_loc <- readline("What was the location of data collection? (City, State, County, Country and/or GPS Coordinates or bounding boxes)? -  ")
-  funding <- readline("Information about funding sources or sponsorship that supported data collection? - ")
+
+  if(is.null(template_file)) {
+    name <- readline("What is your name? - ")
+    email <- readline("What is your email? - ")
+    pi <- readline("Who is the PI of this project? - ")
+    copi <- readline("Who is the Associate or Co-investigator for this project? - ")
+    prim_contact <- readline("Who is the primary contact for this project? - ")
+    alt_contact <- readline("Who are the alternative contacts for this project? - ")
+    data_loc <- readline("What was the location of data collection? (City, State, County, Country and/or GPS Coordinates or bounding boxes)? -  ")
+    funding <- readline("Information about funding sources or sponsorship that supported data collection? - ")
+
+    proj_name <- readline("emLab project name - ")
+    proj_url <- readline("URL to project folder on emLab Team Drive - ")
+    proj_desc <- readline("Project description (brief summary of project, how data were used, what data were used) - ")
+    git_url <- readline("URL to project github repo - ")
+
+    # Sharing/Access Information
+    restcrictions <- readline("Are there any licenses/restrictions placed on the data or any limitations of reuse? - ")
+    citation <- readline("What is the recommended citation for the data? - ")
+    other_citations <- readline("Any citations/links emLab publications that cite or use the data? - ")
+
+  } else {
+    # General Information
+    name_email <- str_split(gsub("^[^:]*by |[)]", "", modify[1,]), "[(]")
+    name <- str_trim(name_email[[1]][1])
+    email <- str_trim(name_email[[1]][2])
+    pi <- str_trim(gsub("Principal Investigator: ", "", modify[grepl("Principal Investigator:", modify$vals),]))
+    copi <- str_trim(gsub("Associate or Co-investigator: ", "", modify[grepl("Associate or Co-investigator:", modify$vals),]))
+    prim_contact <- str_trim(gsub("Primary Contact: ", "", modify[grepl("Primary Contact:", modify$vals),]))
+    alt_contact <- str_trim(gsub("Alternate Contact[(]s[)]: ", "", modify[grepl("Alternate Contact[(]s[)]:", modify$vals),]))
+    data_loc <- str_trim(gsub("Geographic location of data collection: ", "", modify[grepl("Geographic location of data collection:", modify$vals),]))
+    funding <- str_trim(gsub("Information about funding sources or sponsorship that supported the collection of the data: ", "", modify[grepl("Information about funding sources or sponsorship that supported the collection of the data:", modify$vals),]))
+
+    # Project Information
+    proj_name_url <- str_split(gsub("Project name: |[)]", "", modify[grepl("Project name:", modify$vals),]), "[()]")
+    proj_name <- str_trim(proj_name_url[[1]][1])
+    proj_url <- str_trim(proj_name_url[[1]][2])
+    proj_desc <- str_trim(gsub("Project Description: ", "", modify[grepl("Project Description:", modify$vals),]))
+    git_url <- str_trim(gsub("GitHub: ", "", modify[grepl("GitHub:", modify$vals),]))
+
+    # Sharing/Access Information
+    restcrictions <- str_trim(gsub("Licenses/restrictions placed on the data, or limitations of reuse: ", "", modify[grepl("Licenses/restrictions placed on the data, or limitations of reuse:", modify$vals),]))
+    citation <- str_trim(gsub("Recommended citation for the data: ", "", modify[grepl("Recommended citation for the data:", modify$vals),]))
+    other_citations <- str_trim(gsub("Links to other publicly accessible locations of the data: ", "", modify[grepl("Links to other publicly accessible locations of the data:", modify$vals),]))
+  }
+
+  # General info
+  links <- readline("Links to other publicly accessible locations for the data? - ")
+  rel_links <- readline("Links or relationships to other datasets? - ")
 
   # Project Information
   proj_info <- readline("Describe how you have used this data in emLab projects - ")
-  proj_name <- readline("emLab project name - ")
-  proj_url <- readline("URL to project folder on emLab Team Drive - ")
-  proj_desc <- readline("Project description (brief summary of project, how data were used, what data were used) - ")
-  git_url <- readline("URL to project github repo - ")
-
-  # Sharing/Access Information
-  restcrictions <- readline("Are there any licenses/restrictions placed on the data or any limitations of reuse? - ")
-  citation <- readline("What is the recommended citation for the data? - ")
-  other_citations <- readline("Any citations/links emLab publications that cite or use the data? - ")
-  links <- readline("Links to other publicly accessible locations for the data? - ")
-  rel_links <- readline("Links or relationships to other datasets? - ")
 
   # Data Description/File Overview
   data_desc <- readline("Summary of data contents - ")
@@ -86,7 +125,6 @@ create_metadataC <- function(file = NULL, path = ".", sheet_names = NULL){
   methods_proc <- readline("Describe how the submitted data were generated from the raw or collected data - ")
   methods_qaqc <- readline("Describe any QAQC that was performed on the data - ")
   methods_people <- readline("List any people involved in the sample collection, processing, and/or submission - ")
-
   # Data - Specific Information
 
   # Data descriptions for csv files or files with one sheet
@@ -136,7 +174,7 @@ create_metadataC <- function(file = NULL, path = ".", sheet_names = NULL){
   special_format <- readline("Specialized formats or other abbreviations used - ")
 
   # Write File
-  sink(paste(path,filename), append = FALSE)
+  sink(paste0(path,filename), append = FALSE)
   writeLines(c("This ",filename," file was generated on ", date,  " by ", name, " (", email, ")"), sep = "")
   writeLines("")
   writeLines("\n--------------------------")

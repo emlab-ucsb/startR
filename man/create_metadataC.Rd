@@ -4,7 +4,13 @@
 \alias{create_metadataC}
 \title{Create a complete metadata file from an excel or csv file using prompts}
 \usage{
-create_metadataC(file = NULL, path = ".", sheet_names = NULL)
+create_metadataC(
+  file = NULL,
+  path = ".",
+  sheet_names = NULL,
+  template_file = NULL,
+  template_path = NULL
+)
 }
 \arguments{
 \item{file}{string for the filename you'd like to read in (e.g. "this_datasheet.csv")}
@@ -12,6 +18,10 @@ create_metadataC(file = NULL, path = ".", sheet_names = NULL)
 \item{path}{directory for where that files lives (and where the readme will be saved) (e.g. "Downloads/")}
 
 \item{sheet_names}{concatenated strings (e.g. c("Macroinverts", "FishLength")) for which sheets of an excel file you'd like to generate a metadata file for; all sheets specified will be kept in the same readme document; if using a csv file or only one sheet is present, set to NULL}
+
+\item{template_file}{string for the metadata file that you'd like to use as a template (keeps the project info from this file to write the new metadata file)}
+
+\item{template_path}{directory for where the template metadatafile lives}
 }
 \description{
 Generates a metadata file that matches the emLab SOP and asks you a series of questions to fill in (currently only works for .csv and .xlsx/.xls)
