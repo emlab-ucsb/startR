@@ -17,7 +17,7 @@ ggtheme_plot <- function (font_size = 10, font_family = "", line_size = 0.5) {
     theme(rect = element_rect(fill = "transparent",
                               colour = NA,
                               color = NA,
-                              size = 0,
+                              linewidth = 0,
                               linetype = 0),
           text = element_text(family = font_family,
                               face = "plain",
